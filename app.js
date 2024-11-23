@@ -21,6 +21,7 @@ app.use(express.json())
 app.use(fileUpload())
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
+app.get('/', (req, res) => {res.json({ message: 'Selamat datang di aplikasi ini ' })});
 app.post('/register', c_register.register)
 app.post('/login', c_login.login)
 app.get('/profile', c_profile.getProfile)
